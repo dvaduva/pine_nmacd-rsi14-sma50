@@ -1,6 +1,6 @@
 // This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
 // © dvaduva
-strategy(overlay=false, shorttitle="N MACD + RSI14 + SMA50", default_qty_type = strategy.percent_of_equity, initial_capital = 10000, default_qty_value = 100, pyramiding = 0, title="Normalized MACD + RSI14 + SMA50", currency = 'USD')
+study("Normalized MACD + RSI14 + SMA50", shorttitle="N MACD + RSI14 + SMA50", overlay=false)
 
 sma = input(12,title='Fast MA')
 lma = input(21,title='Slow MA')
@@ -54,6 +54,3 @@ rsiUnder  = crossover(up,down)
 plot(macdOver  ?  10:na , color=green, linewidth=5, offset=0, style = histogram, transp=50)
 plot(macdUnder ? -10:na , color=red,   linewidth=5, offset=0, style = histogram, transp=50)
 
-////stragegy
-//longFilter = crossover(MacNorm2,Trigger)
-//plotchar(longFilter,  title="SELL", char="S", location=location.abovebar)
